@@ -37,6 +37,7 @@ def diagnosis(file):
 
     plt.imshow(image)
     plt.savefig("temp.png")
+    st.subheader("Uploaded Image")
     st.image("temp.png")
 
     # Load model
@@ -68,10 +69,14 @@ def diagnosis(file):
 
     # # Find the name of the diagnosis
     # ## YOUR CODE GOES HERE##
-    diag = {i for i in lab if lab[i] == predictions}
+    res = {i for i in lab if lab[i] == predictions}
+    resstr = str(res)
+    results = resstr.strip("'{}")
+
+    diag = "The diagnosis result is: " + results
 
     return diag
 
 
 if data is not None:
-    st.text(diagnosis(data))
+    st.subheader(diagnosis(data))
