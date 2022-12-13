@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import mahotas as mh
 import pickle
-import matplotlib.pyplot as plt
+import matplotlib.pyplotgi as plt
 
 
 st.title('6-AB-B')
